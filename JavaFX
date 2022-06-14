@@ -1,0 +1,91 @@
+package com.example.myjavafx;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.paint.Color;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import javafx.scene.shape.*;
+
+
+import java.io.IOException;
+
+public class HelloApplication extends Application {
+    public static void main(String[] args) {
+        launch();
+    }
+    @Override
+    public void start(Stage stage) throws IOException {
+
+
+        Group root = new Group();
+        Scene scene = new Scene(root, 300, 250);
+//////////////////////////////////////////////////////
+// elements of the scene will be inserted here
+        Rectangle r = new Rectangle (); // creating figure
+        r.setX(10);
+        r.setY(10);
+        r.setWidth(280);
+        r.setHeight(280);
+        r.setFill(Color.ORANGE);
+
+        root.getChildren().add(r); // adding figure to root container
+
+        // Circles
+
+        Circle circle1 = new Circle();
+        circle1.setCenterX(110.0f);
+        circle1.setCenterY(200.0f);
+        circle1.setRadius(20.0f);
+        circle1.setFill(Color.BLUEVIOLET);
+
+
+        Circle circle2 = new Circle();
+        circle2.setCenterX(200.0f);
+        circle2.setCenterY(200.0f);
+        circle2.setRadius(20.0f);
+        circle2.setFill(Color.BLUEVIOLET);
+
+
+        root.getChildren().add(circle1);
+        root.getChildren().add(circle2);
+
+
+
+//////////////////////////////////////////////////////
+
+
+        Polygon polygon = new Polygon(75.0, 50.0, 120.0, 80.0,250.0,80.0,250.0,130.0,75.0,130.0);
+        polygon.setFill(Color.WHITESMOKE);
+
+        root.getChildren().add(polygon);
+
+        stage.setScene(scene);
+        stage.show();
+
+
+        /// lines
+
+        Line line1 = new Line(127, 190, 200, 130);
+        root.getChildren().add(line1);
+        line1.setStroke(Color.BLACK);
+
+        Line line2 = new Line(110, 130 , 183, 190);
+        root.getChildren().add(line2);
+        line2.setStroke(Color.BLACK);
+
+
+        Line line3 = new Line(250,80 , 280, 50);
+        root.getChildren().add(line3);
+        line3.setStroke(Color.BLACK);
+
+
+
+
+
+    }
+
+
+}
